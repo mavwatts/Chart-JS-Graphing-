@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="someText">This is a paragraph but not really.</p>
+
+    <img src="" id="example" />
+
+    <script>
+        
+      async function catchExample(){
+          const response = await fetch("https://cdn.pixabay.com/photo/2015/06/19/21/24/the-road-815297__340.jpg");
+          const blob = await response.blob();
+          document.getElementById('example').src = URL.createObjectURL(blob)
+
+        }
+
+        catchExample()
+                .catch(error => {
+                console.log('There is an error!')
+                console.error(error)
+            });  
+
+       </script>
+
+      <!-- let students = `[
+          {
+              "name": 'Mavrick Watts',
+              "age": 28,
+              "weight": 180
+          },
+          {
+              "name": 'Vince Brooks',
+              "age": 28,
+              "weight": 180
+          }
+        ]`; -->
+    
+    <!-- <script src="home.js"></script> -->
+  </body>
+</html>
